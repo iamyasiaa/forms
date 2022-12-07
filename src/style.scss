@@ -1,0 +1,121 @@
+body {
+  background-color: azure;
+}
+.service {
+  display: grid;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  grid-template-columns: 300px 300px 300px;
+}
+.mainForm {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  display: inline-block;
+  width: 970px;
+}
+.textField {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: 0.3s border-color;
+}
+.select-theme {
+  width: 400px;
+}
+.link {
+  display: grid;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+  grid-template-columns: 300px 300px 300px;
+}
+.address {
+  display: grid;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+  grid-template-columns: 600px 300px 300px;
+}
+.address-full {
+  display: grid;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+  grid-template-columns: 600px 150px 150px;
+}
+
+.name {
+  display: grid;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+  grid-template-columns: 600px 300px;
+}
+label {
+  display: block;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+label input[type="radio"] {
+  position: absolute;
+  opactiy: 0;
+  width: 0;
+  height: 0;
+}
+
+label span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  transition: 0.3s background-color;
+}
+label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+label:hover span {
+  background-color: #ccc;
+}
+label input:checked ~ span {
+  background-color: #2eaadc;
+}
+label input:checked ~ span:after {
+  display: block;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.button {
+  padding: 7px 60px;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+.file-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
