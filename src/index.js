@@ -1,6 +1,7 @@
 import "./style.scss";
 
 const form = document.forms.myForm;
+
 function mock(succes, timeout) {
   const service = form.elements.service;
   const numberService = form.elements.numberService;
@@ -19,39 +20,41 @@ function mock(succes, timeout) {
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (succes) {
-        resolve(
-          JSON.stringify({
-            service: service.value,
-            numberService: numberService.value,
-            perconalAccount: perconalAccount.value,
-            theme: theme.value,
-            textAppeal: textAppeal.value,
-            name: name.value,
-            time: time.value,
-            phone: phone.value,
-            email: email.value,
-            area: area.value,
-            locality: locality.value,
-            street: street.value,
-            flat: flat.value,
-            houseNumber: houseNumber.value,
-          })
-        );
-      } else {
+      try {
+        if (succes) {
+          resolve(
+            JSON.stringify({
+              service: service.value,
+              numberService: numberService.value,
+              perconalAccount: perconalAccount.value,
+              theme: theme.value,
+              textAppeal: textAppeal.value,
+              name: name.value,
+              time: time.value,
+              phone: phone.value,
+              email: email.value,
+              area: area.value,
+              locality: locality.value,
+              street: street.value,
+              flat: flat.value,
+              houseNumber: houseNumber.value,
+            })
+          );
+        } else {
+          reject("Ошибка");
+        }
+      } catch (err) {
         reject("Ошибка");
       }
     }, timeout);
   });
 }
 
-function main(ev) {
+async function main(ev) {
   ev.preventDefault();
-  const promise = mock(true, 500);
+  const promise = await mock(true, 500);
 
-  promise?.then((result) => {
-    alert(result);
-  });
+  alert(promise);
 
   return false;
 }
