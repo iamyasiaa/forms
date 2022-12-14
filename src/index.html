@@ -5,38 +5,40 @@
     <title>Form</title>
     <link href="./style.scss" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script defer src="main.803459a665ae92d5bb76.js"></script>
+    <script defer src="main.803459a665ae92d5bb76.js">
+    </script>
+     
   </head>
   <body>
     <div class="mainForm">
-      <form>
+      <form name="myForm">
         <h2>Пожалуйста, заполните форму</h2>
         <div class="service">
-          <select class="select">
+          <select name="service" class="select">
             <option class="option">Выберите услугу</option>
             <option class="option">Услуга 1</option>
             <option class="option">Услуга 2</option>
           </select>
-          <input class="textField" placeholder="Номер услуги"></input>
-          <input class="textField" placeholder="Лицевой счет"></input>
+          <input name="numberService" class="textField" placeholder="Номер услуги"></input>
+          <input name="perconalAccount" class="textField" placeholder="Лицевой счет"></input>
         </div>
-        <select class="select select-theme" >
+        <select name="theme" class="select select-theme" >
           <option class="option">Выберите тему обращения</option>
           <option class="option">Тема обращения 1</option>
           <option class="option">Тема обращения 2</option>
         </select>
-        <textarea class="textField" placeholder="Текст обращения"></textarea>
-        <div class="name">
-          <input class="textField" placeholder="Фамилия, имя, общество"></input>
-          <select class="select">
+        <textarea name="textAppeal" class="textField" placeholder="Текст обращения"></textarea>
+        <div  class="name">
+          <input name="name" class="textField" placeholder="Фамилия, имя, общество"></input>
+          <select name="time" class="select">
             <option class="option">Выберите время</option>
             <option class="option">В любое время 1</option>
             <option class="option">В любое время 2</option>
           </select>
         </div>
         <div class="link">
-          <input class="textField" placeholder="Контактный телефон"></input>
-          <input class="textField" placeholder="Электронная потча"></input>
+          <input name="phone" class="textField" placeholder="Контактный телефон"></input>
+          <input name="email" class="textField" placeholder="Электронная потча"></input>
           <div>
             <label>Связаться с Вами по эл.почте
               <input type="radio" name="button" checked/>
@@ -49,28 +51,28 @@
           </div>
         </div>
         <div class="address">
-          <select class="select">
+          <select name="area" class="select">
             <option class="option">Выберите регион оказания услуги</option>
             <option class="option">Регион оказания услуги 1</option>
             <option class="option">Регион оказания услуги 2</option>
           </select>
-          <input class="textField" placeholder="Населенный пункт"></input>
+          <input name="locality" class="textField" placeholder="Населенный пункт"></input>
         </div>
         <div class="address-full">
-          <input class="textField" placeholder="Улица"></input>
-          <input class="textField" placeholder="№ дома"></input>
-          <input class="textField" placeholder="Квартира"></input>
+          <input name="street" class="textField" placeholder="Улица"></input>
+          <input name="houseNumber" class="textField" placeholder="№ дома"></input>
+          <input name="flat" class="textField" placeholder="Квартира"></input>
         </div>
         <div class="file-block">
           <input id="file" type="file" accept="imege/png, image/jpeg" class="file">
         </input>
         <label htmlFor="file">Максимальное количество файлов 3<br>Размер файла не должен превышать 700 КБ</label>
         </div>
-        <button class="button">
+        <button name="button" class="button">
           Отправить
         </button>
        </form>
     </div>
-   
   </body>
 </html>
+
