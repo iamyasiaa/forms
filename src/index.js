@@ -19,40 +19,39 @@ function mock(succes, timeout) {
   const houseNumber = form.elements.houseNumber;
 
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      try {
-        if (succes) {
-          resolve(
-            JSON.stringify({
-              service: service.value,
-              numberService: numberService.value,
-              perconalAccount: perconalAccount.value,
-              theme: theme.value,
-              textAppeal: textAppeal.value,
-              name: name.value,
-              time: time.value,
-              phone: phone.value,
-              email: email.value,
-              area: area.value,
-              locality: locality.value,
-              street: street.value,
-              flat: flat.value,
-              houseNumber: houseNumber.value,
-            })
-          );
-        } else {
-          reject("Ошибка");
+    try {
+      setTimeout(() => {
+        if (!succes) {
+          throw new Error("Ошибка");
         }
-      } catch (err) {
-        reject("Ошибка");
-      }
-    }, timeout);
+        resolve(
+          JSON.stringify({
+            service: service.value,
+            numberService: numberService.value,
+            perconalAccount: perconalAccount.value,
+            theme: theme.value,
+            textAppeal: textAppeal.value,
+            name: name.value,
+            time: time.value,
+            phone: phone.value,
+            email: email.value,
+            area: area.value,
+            locality: locality.value,
+            street: street.value,
+            flat: flat.value,
+            houseNumber: houseNumber.value,
+          })
+        );
+      }, timeout);
+    } catch (err) {
+      throw new Error("Ошибка");
+    }
   });
 }
 
 async function main(ev) {
   ev.preventDefault();
-  const promise = await mock(true, 500);
+  const promise = await mock(false, 500);
 
   alert(promise);
 
